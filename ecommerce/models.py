@@ -1,4 +1,6 @@
+from typing import Iterable
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class Collection(models.Model):
     name = models.CharField(max_length=20, unique=True)
@@ -16,7 +18,21 @@ class Product(models.Model):
     quantity = models.IntegerField(default=0)
 
     # validate the price and quantity using the clean method and write a test
+    def clean(self) -> None:
+        if self.quantity < 0:
+            raise ValidationError("The quantity of the product cannot be less than 0")
+        if self.price < 0:
+            raise ValidationError("The price of the product cannot be less than 0")
+        
+        return super().clean()
 
+    def save(self, *args, **kwargs) -> None:
+        self.clean()
+        return super().save(*args, **kwargs)
+    
+    def __str__(self) -> str:
+        return f"{self.name}: {self.price} XAF"
+    
 class CollectionProduct(models.Model):
     collection = models.ForeignKey(Collection, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -26,6 +42,10 @@ class Variant(models.Model):
     name = models.CharField(max_length=30)
 
     # validate product and variant name are unique together
+    class Meta:
+        unique_together = [
+            ["product", "name"]
+        ]
 
 class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -36,7 +56,7 @@ class Order(models.Model):
     discount = models.FloatField(default=0) # given in fractions, from 0 - 1
 
     # create a method for getting the total order price
-    # validate the discount > 0 and < 1
+    # validate the discount >= 0 and <= 1
 
 class OrderProduct(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
