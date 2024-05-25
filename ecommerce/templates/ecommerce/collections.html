@@ -1,0 +1,232 @@
+{% extends 'ecommerce/base.html' %} {% block full_page_content %}
+<div class="breadcrumbs">
+  <div class="container">
+    <ul>
+      <li><a href="{% url 'ecommerce:index' %}">Home</a></li>
+
+      {% if collection %}
+        <li><a href="{% url 'ecommerce:collections' %}">Collections</a></li>
+        
+        <li><span>{{ collection.name }}</span></li>
+      {% else %}
+        <li><span>Collections</span></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="collection_info_wrapper">
+    <div class="collection_info">
+      <div class="collection_text">
+        <div>
+          <h1 class="collection_title">Products</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="main_content sidebar_on col-md-9 col-lg-9 left-sidebar">
+      <div
+        id="shopify-section-template-collection"
+        class="shopify-section section_template section_template__collection"
+      >
+        <div class="product_options">
+          <div class="product_options__sort">
+            <label for="sort_by_select">Sort by:</label>
+
+            <div class="select-wrapper">
+              <select id="sort_by_select">
+                <option value="manual">Featured</option>
+                <option value="best-selling">Best Selling</option>
+                <option value="title-ascending">Name: A – Z</option>
+                <option value="title-descending">Name: Z – A</option>
+                <option value="price-ascending">Price: low to high</option>
+                <option value="price-descending">Price: high to low</option>
+                <option value="created-ascending">Oldest to newest</option>
+                <option value="created-descending">Newest to oldest</option>
+              </select>
+              <div class="select-arrow-1"></div>
+            </div>
+          </div>
+
+          <div class="product_count">20 items</div>
+
+          <ul class="product_view">
+            <li id="view_grid" data-view="grid" class="active">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="10.9091" width="4.09091" height="4.09091" />
+                <rect
+                  x="10.9091"
+                  y="5.45459"
+                  width="4.09091"
+                  height="4.09091"
+                />
+                <rect
+                  x="10.9091"
+                  y="10.9092"
+                  width="4.09091"
+                  height="4.09091"
+                />
+                <rect x="5.45459" width="4.09091" height="4.09091" />
+                <rect
+                  x="5.45459"
+                  y="5.45459"
+                  width="4.09091"
+                  height="4.09091"
+                />
+                <rect
+                  x="5.45459"
+                  y="10.9092"
+                  width="4.09091"
+                  height="4.09091"
+                />
+                <rect width="4.09091" height="4.09091" />
+                <rect y="5.45459" width="4.09091" height="4.09091" />
+                <rect y="10.9092" width="4.09091" height="4.09091" />
+              </svg>
+            </li>
+            <li id="view_list" data-view="list">
+              <svg
+                width="16"
+                height="15"
+                viewBox="0 0 16 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="6.09106"
+                  y="1.36353"
+                  width="9.54545"
+                  height="1.36364"
+                />
+                <rect
+                  x="6.09106"
+                  y="6.81812"
+                  width="9.54545"
+                  height="1.36364"
+                />
+                <rect
+                  x="6.09106"
+                  y="12.2727"
+                  width="9.54545"
+                  height="1.36364"
+                />
+                <rect x="0.636475" width="4.09091" height="4.09091" />
+                <rect
+                  x="0.636475"
+                  y="5.45459"
+                  width="4.09091"
+                  height="4.09091"
+                />
+                <rect
+                  x="0.636475"
+                  y="10.9092"
+                  width="4.09091"
+                  height="4.09091"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row product_listing__main" id="product_listing__sorted">
+          {% for product in products %}
+          <div class="col-lg-4 col-sm-4 col-md-4 col-6 product_item_wrap">
+            <div class="product_item" id="product__{{ product.name }}">
+              <div class="product_img_wrap">
+                <div class="product_img">
+                  <a class="img_change" href="">
+                    <img
+                      class="lazyload"
+                      src="{{ product.cover_image.url }}"
+                      data-src="{{ product.cover_image.url }}"
+                      alt="{{ product.name }}"
+                    />
+
+                    <div class="bade_wrap">
+                      <span class="product_badge new">NEW</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product_links">
+                  <div class="product_links__subbutton">
+                    <a
+                      class="js_quick_view quick_view_btn"
+                      href="products/afghan-kush.html"
+                      title="Quick view"
+                      ><span>Quick view</span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8 6H10V8H12V10H10V12H8V10H6V8H8V6Z" />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M20 18.5787L16.2437 14.8223C17.4619 13.2995 18.2741 11.269 18.2741 9.13706C18.2741 4.06091 14.2132 0 9.13706 0C4.06091 0 0 4.06091 0 9.13706C0 14.2132 4.06091 18.2741 9.13706 18.2741C11.269 18.2741 13.2995 17.5635 14.8223 16.2437L18.5787 20L20 18.5787ZM2.03046 9.13706C2.03046 5.17766 5.17766 2.03046 9.13706 2.03046C13.0964 2.03046 16.2437 5.17766 16.2437 9.13706C16.2437 13.0964 13.0964 16.2437 9.13706 16.2437C5.17766 16.2437 2.03046 13.0964 2.03046 9.13706Z"
+                        />
+                      </svg>
+                    </a>
+
+                    <a
+                      href="account/login.html"
+                      class="wishlist_btn wishlist_login"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10 18L8.74 16.7826C4.06 12.7826 1 10.087 1 6.78261C1 4.08696 3.16 2 5.95 2C7.48 2 9.01 2.69565 10 3.82609C10.99 2.69565 12.52 2 14.05 2C16.84 2 19 4.08696 19 6.78261C19 10.087 15.94 12.7826 11.26 16.7826L10 18Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        ></path></svg
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar_small col-md-3 col-lg-3">
+      <div id="shopify-section-sidebar" class="shopify-section page_sidebar">
+        <div class="sidebar">
+          <div class="sidebar_widget sidebar_widget__collections">
+            <h6 class="widget_header linklist_menu_title">Collections</h6>
+
+            <div class="widget_content">
+              <ul class="list_links">
+                {% for collection in collections %}
+                <li>
+                  <a href="{% url 'ecommerce:collections' collection.id %}"
+                    >{{ collection.name }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

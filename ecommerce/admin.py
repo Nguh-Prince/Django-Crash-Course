@@ -22,7 +22,7 @@ class OrderProductInline(admin.StackedInline):
 
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ImageInline, VariantInline, CollectionProductInline]
-    list_display = ("name", "price", "quantity")
+    list_display = ("name", "price", "quantity", "time_created")
 
 class OrderAdmin(admin.ModelAdmin):
     inlines = [OrderProductInline]

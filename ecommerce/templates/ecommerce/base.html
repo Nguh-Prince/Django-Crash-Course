@@ -1,0 +1,1895 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="color_scheme">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Multifly Ganjan</title>
+
+    <link rel="canonical" href="index.html" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'ecommerce/cdn/shop/files/fav_32x323b1f.png' %}"
+      type="image/png"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!--[if IE]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <![endif]-->
+
+    <!-- CSS -->
+
+    <style type="text/css">
+      @font-face {
+        font-family: Oswald;
+        font-weight: 400;
+        font-style: normal;
+        src: url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n4.a5ee385bde39969d807f7f1297bf51d73fbf3c1e2010.woff2' %}")
+            format("woff2"),
+          url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n4.8f3e284746fbc2d29e34993609c51fdc432b0b24ae26.woff' %}")
+            format("woff");
+      }
+
+      @font-face {
+        font-family: Oswald;
+        font-weight: 500;
+        font-style: normal;
+        src: url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n5.22b74dce86cb1e4738ccceb326c9284bc24641e932e7.woff2' %}")
+            format("woff2"),
+          url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n5.c60897f79173105d5bae1e28e68e9326a4a646310462.woff' %}")
+            format("woff");
+      }
+
+      @font-face {
+        font-family: Oswald;
+        font-weight: 300;
+        font-style: normal;
+        src: url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n3.bff4a8cab6f8be4b0b6d9de4e53c84f45f143640b50a.woff2' %}")
+            format("woff2"),
+          url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n3.9274b221a436d59cfed6e5cac51271ed4d1481996872.woff' %}")
+            format("woff");
+      }
+
+      @font-face {
+        font-family: Oswald;
+        font-weight: 400;
+        font-style: normal;
+        src: url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n4.a5ee385bde39969d807f7f1297bf51d73fbf3c1e2010.woff2' %}")
+            format("woff2"),
+          url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n4.8f3e284746fbc2d29e34993609c51fdc432b0b24ae26.woff' %}")
+            format("woff");
+      }
+
+      @font-face {
+        font-family: Oswald;
+        font-weight: 500;
+        font-style: normal;
+        src: url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n5.22b74dce86cb1e4738ccceb326c9284bc24641e932e7.woff2' %}")
+            format("woff2"),
+          url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n5.c60897f79173105d5bae1e28e68e9326a4a646310462.woff' %}")
+            format("woff");
+      }
+
+      @font-face {
+        font-family: Oswald;
+        font-weight: 700;
+        font-style: normal;
+        src: url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n7.f71e68b857a7b8128a7629452b9c6bf9468356a76fae.woff2' %}")
+            format("woff2"),
+          url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n7.2767cc6e7cfc91284caa2c06eb07eca21a27681efce4.woff' %}")
+            format("woff");
+      }
+
+      @font-face {
+        font-family: Oswald;
+        font-weight: 600;
+        font-style: normal;
+        src: url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n6.12ae05b08a526523f8379ba6e10fde2140b133ea2951.woff2' %}")
+            format("woff2"),
+          url("{% static 'ecommerce/cdn/fonts/oswald/oswald_n6.1f460fc9ad98670d0370772496961d620bdca9f0cf75.woff' %}")
+            format("woff");
+      }
+
+      :root {
+        /*  TYPOGRAPHY  */
+        --base-font: Oswald, sans-serif;
+        --base-font-size: 16px;
+        --heading-font: Oswald, sans-serif;
+        --heading-font-size: 30px;
+        --heading-light-font-weight: 300;
+        --heading-regular-font-weight: 400;
+        --heading-medium-font-weight: 500;
+        --heading-bold-font-weight: 700;
+        --heading-semi-bold-font-weight: 600;
+        --heading-extra-bold-font-weight: ;
+        /*  COLORS  */
+        --color-1: #171717;
+        --color-2: #078f5f;
+        --color-3: #ffffff;
+        --color-4: #000000;
+        --bg-color: #fcfcfc;
+        --base-font-color: #6c6e71;
+        --heading-font-color: #171717;
+        --border-color: #f8f1e8;
+        --links-color: #171717;
+        --links-color-hover: #31862f;
+        --button-color: #078f5f;
+        --button-text-color: #ffffff;
+        --button-border-color: #078f5f;
+        --button-hover-color: #171717;
+        --button-hover-text-color: #ffffff;
+        --button-hover-border-color: #171717;
+        --alt-button-color: #ffffff;
+        --alt-button-text-color: #171717;
+        --alt-button-border-color: #ffffff;
+        --alt-button-hover-color: #171717;
+        --alt-button-hover-text-color: #ffffff;
+        --alt-button-hover-border-color: #171717;
+        --product-name-color: #6c6e71;
+        --product-name-color-hover: #078f5f;
+        --product-price-color: #171717;
+        --product-price-sale-color: #6c6e71;
+      }
+    </style>
+    <link
+      href="{% static 'ecommerce/cdn/shop/t/3/assets/style.scss4980.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="{% static 'ecommerce/cdn/shop/t/3/assets/responsive.scssf940.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+
+    <!-- JS -->
+    <script>
+      var theme = {
+        moneyFormat: "${{amount}}",
+      };
+    </script>
+    <script src="{% static 'ecommerce/cdn/shop/t/3/assets/assets5617.js' %}"></script>
+    <script
+      src="{% static 'ecommerce/cdn/shop/t/3/assets/lazysizes.min57a7.js' %}"
+      defer
+    ></script>
+    <script
+      src="{% static 'ecommerce/cdn/shop/t/3/assets/shop1367.js' %}"
+      defer
+    ></script>
+    <script
+      src="{% static 'ecommerce/cdn/shop/t/3/assets/header-script1832.js' %}"
+      type="text/javascript"
+    ></script>
+    <!-- SHOPIFY SERVICE SCRIPTS -->
+    <script>
+      window.performance &&
+        window.performance.mark &&
+        window.performance.mark("shopify.content_for_header.start");
+    </script>
+    <meta
+      id="shopify-digital-wallet"
+      name="shopify-digital-wallet"
+      content="/5581805/digital_wallets/dialog"
+    />
+    <script
+      async="async"
+      src="{% static 'ecommerce/checkouts/internal/preloads5e72.js' %}"
+    ></script>
+    <script
+      async="async"
+      src="{% static 'ecommerce/shop.app/checkouts/internal/preloads7265.js' %}"
+      crossorigin="anonymous"
+    ></script>
+    <script id="shopify-features" type="application/json">
+      {
+        "accessToken": "957ac1582b336c091a83d841204369bd",
+        "betas": ["rich-media-storefront-analytics"],
+        "domain": "tm-shopify067-alternative.myshopify.com",
+        "predictiveSearch": true,
+        "shopId": 5581805,
+        "smart_payment_buttons_url": "https:\/\/tm-shopify067-alternative.myshopify.com\/cdn\/shopifycloud\/payment-sheet\/assets\/latest\/spb.en.js",
+        "dynamic_checkout_cart_url": "https:\/\/tm-shopify067-alternative.myshopify.com\/cdn\/shopifycloud\/payment-sheet\/assets\/latest\/dynamic-checkout-cart.en.js",
+        "locale": "en"
+      }
+    </script>
+    <script>
+      var Shopify = Shopify || {};
+      Shopify.shop = "tm-shopify067-alternative.myshopify.com";
+      Shopify.locale = "en";
+      Shopify.currency = { active: "USD", rate: "1.0" };
+      Shopify.country = "CM";
+      Shopify.theme = {
+        name: "eze-1123",
+        id: 120246304835,
+        theme_store_id: null,
+        role: "main",
+      };
+      Shopify.theme.handle = "null";
+      Shopify.theme.style = { id: null, handle: null };
+      Shopify.cdnHost = "tm-shopify067-alternative.myshopify.com/cdn";
+      Shopify.routes = Shopify.routes || {};
+      Shopify.routes.root = "index.html";
+    </script>
+    <script type="module">
+      !(function (o) {
+        (o.Shopify = o.Shopify || {}).modules = !0;
+      })(window);
+    </script>
+    <script>
+      !(function (o) {
+        function n() {
+          var o = [];
+          function n() {
+            o.push(Array.prototype.slice.apply(arguments));
+          }
+          return (n.q = o), n;
+        }
+        var t = (o.Shopify = o.Shopify || {});
+        (t.loadFeatures = n()), (t.autoloadFeatures = n());
+      })(window);
+    </script>
+    <script id="shop-js-features" type="application/json">
+      { "compact": "" }
+    </script>
+    <script id="shop-js-analytics" type="application/json">
+      { "pageType": "index" }
+    </script>
+    <script id="__st">
+      var __st = {
+        a: 5581805,
+        offset: -14400,
+        reqid: "eb10dc74-fdc9-4cf7-a467-b2c7ed7b2332-1716218043",
+        pageurl: "tm-shopify067-alternative.myshopify.com\/",
+        u: "09fbe6c77493",
+        p: "home",
+      };
+    </script>
+    <script>
+      window.ShopifyPaypalV4VisibilityTracking = true;
+    </script>
+    <script>
+      !(function () {
+        "use strict";
+        const e = "contact",
+          t = "account",
+          n = "new_comment",
+          o = (e) =>
+            e
+              .map(
+                ([e, t]) =>
+                  `form[action*='/${e}'] input[name='form_type'][value='${t}']`
+              )
+              .join(",");
+        function c(e, t) {
+          try {
+            const n = window.sessionStorage;
+            for (const [o, c] of Object.entries(JSON.parse(n.getItem(t))))
+              e.elements[o] && (e.elements[o].value = c);
+            n.removeItem(t);
+          } catch {}
+        }
+        const s = "form_type",
+          r = "cptcha";
+        var a, m, i, u;
+        (a = window),
+          (m = document),
+          (u = "ce_forms"),
+          (a[(i = "Shopify")] = a[i] || {}),
+          (a[i][u] = a[i][u] || {}),
+          (a[i][u].q = []),
+          (function (a, m, i, u, f) {
+            const [d, l] = (function (c, s) {
+                const r = s
+                    ? [
+                        [e, e],
+                        ["blogs", n],
+                        ["comments", n],
+                        [e, "customer"],
+                      ]
+                    : [],
+                  a = c
+                    ? [
+                        [t, "customer_login"],
+                        [t, "recover_customer_password"],
+                        [t, "create_customer"],
+                      ]
+                    : [],
+                  m = o([...r, ...a]),
+                  i = o(r.slice(0, 3)),
+                  u = (e) => () =>
+                    e
+                      ? [...document.querySelectorAll(e)].map((e) => e.form)
+                      : [];
+                return [u(m), u(i)];
+              })(!0, !0),
+              p = (e) => {
+                const t = e.target,
+                  n = t instanceof HTMLFormElement ? t : t && t.form;
+                return n && d().find((e) => n === e);
+              };
+            a.addEventListener("submit", (e) => {
+              p(e) && e.preventDefault();
+            });
+            for (const e of ["focusin", "change"])
+              a.addEventListener(e, (e) => {
+                const t = p(e);
+                t &&
+                  !t.dataset[r] &&
+                  (i(
+                    t,
+                    l().some((e) => e === t)
+                  ),
+                  (t.dataset[r] = !0));
+              });
+            const _ = m.get("form_key"),
+              v = m.get(s);
+            _ &&
+              v &&
+              a.addEventListener("DOMContentLoaded", () => {
+                for (const e of l()) e.elements[s].value === v && c(e, _);
+              });
+          })(m, new URLSearchParams(a.location.search), (e, t) => {
+            const n = a[i][u],
+              o = n.bindForm,
+              c = "6LeHG2ApAAAAAO4rPaDW-qVpPKPOBfjbCpzJB9ey";
+            if (o) return o(e, c, t);
+            n.q.push([e, c, t]),
+              m.body.append(
+                Object.assign(m.createElement("script"), {
+                  async: !0,
+                  src: "https://cdn.shopify.com/shopifycloud/storefront-forms-hcaptcha/ce_storefront_forms_captcha_recaptcha.v1.0.5.iife.js",
+                })
+              );
+          });
+      })();
+    </script>
+    <script
+      integrity="sha256-n5Uet9jVOXPHGd4hH4B9Y6+BxkTluaaucmYaxAjUcvY="
+      data-source-attribution="shopify.loadfeatures"
+      defer="defer"
+      src="{% static 'ecommerce/cdn/shopifycloud/shopify/assets/storefront/load_feature-9f951eb7d8d53973c719de211f807d63af81c644e5b9a6ae72661ac408d472f6.24.del' %}"
+      crossorigin="anonymous"
+    ></script>
+    <script data-source-attribution="shopify.dynamic_checkout.dynamic.init">
+      var Shopify = Shopify || {};
+      Shopify.PaymentButton = Shopify.PaymentButton || {
+        isStorefrontPortableWallets: !0,
+        init: function () {
+          window.Shopify.PaymentButton.init = function () {};
+          var t = document.createElement("script");
+          (t.src =
+            "{% static 'ecommerce/cdn/shopifycloud/portable-wallets/latest/portable-wallets.en.js' %}"),
+            (t.type = "module"),
+            document.head.appendChild(t);
+        },
+      };
+    </script>
+    <script data-source-attribution="shopify.dynamic_checkout.cart.bootstrap">
+      document.addEventListener("DOMContentLoaded", function () {
+        function t() {
+          return document.querySelector("#dynamic-checkout-cart");
+        }
+        if (t()) Shopify.PaymentButton.init();
+        else {
+          new MutationObserver(function (e, n) {
+            t() && (Shopify.PaymentButton.init(), n.disconnect());
+          }).observe(document.body, { childList: !0, subtree: !0 });
+        }
+      });
+    </script>
+    <script
+      id="sections-script"
+      data-sections="index-image-with-text-overlay,index-divider,index-featured-products-tabs,index-collection-list-custom,index-products-carousel,header-2"
+      defer="defer"
+      src="{% static 'ecommerce/cdn/shop/t/3/compiled_assets/scriptsdf26.js' %}"
+    ></script>
+
+    <script>
+      window.performance &&
+        window.performance.mark &&
+        window.performance.mark("shopify.content_for_header.end");
+    </script>
+    <meta
+      property="og:image"
+      content="https://cdn.shopify.com/s/files/1/0558/1805/files/logo.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://cdn.shopify.com/s/files/1/0558/1805/files/logo.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <link href="https://monorail-edge.shopifysvc.com/" rel="dns-prefetch" />
+    <script>
+      (function () {
+        if ("sendBeacon" in navigator && "performance" in window) {
+          var session_token = document.cookie.match(/_shopify_s=([^;]*)/);
+          function handle_abandonment_event(e) {
+            var entries = performance.getEntries().filter(function (entry) {
+              return /monorail-edge.shopifysvc.com/.test(entry.name);
+            });
+            if (!window.abandonment_tracked && entries.length === 0) {
+              window.abandonment_tracked = true;
+              var currentMs = Date.now();
+              var navigation_start = performance.timing.navigationStart;
+              var payload = {
+                shop_id: 5581805,
+                url: window.location.href,
+                navigation_start,
+                duration: currentMs - navigation_start,
+                session_token:
+                  session_token && session_token.length === 2
+                    ? session_token[1]
+                    : "",
+                page_type: "index",
+              };
+              window.navigator.sendBeacon(
+                "https://monorail-edge.shopifysvc.com/v1/produce",
+                JSON.stringify({
+                  schema_id: "online_store_buyer_site_abandonment/1.1",
+                  payload: payload,
+                  metadata: {
+                    event_created_at_ms: currentMs,
+                    event_sent_at_ms: currentMs,
+                  },
+                })
+              );
+            }
+          }
+          window.addEventListener("pagehide", handle_abandonment_event);
+        }
+      })();
+    </script>
+    <script id="web-pixels-manager-setup">
+      (function e(e, n, a, t, r) {
+        var o =
+          "function" == typeof BigInt &&
+          -1 !== BigInt.toString().indexOf("[native code]")
+            ? "modern"
+            : "legacy";
+        window.Shopify = window.Shopify || {};
+        var i = window.Shopify;
+        i.analytics = i.analytics || {};
+        var s = i.analytics;
+        (s.replayQueue = []),
+          (s.publish = function (e, n, a) {
+            return s.replayQueue.push([e, n, a]), !0;
+          });
+        try {
+          self.performance.mark("wpm:start");
+        } catch (e) {}
+        var l = [a, "/wpm", "/b", r, o.substring(0, 1), ".js"].join("");
+        !(function (e) {
+          var n = e.src,
+            a = e.async,
+            t = void 0 === a || a,
+            r = e.onload,
+            o = e.onerror,
+            i = document.createElement("script"),
+            s = document.head,
+            l = document.body;
+          (i.async = t),
+            (i.src = n),
+            r && i.addEventListener("load", r),
+            o && i.addEventListener("error", o),
+            s
+              ? s.appendChild(i)
+              : l
+              ? l.appendChild(i)
+              : console.error(
+                  "Did not find a head or body element to append the script"
+                );
+        })({
+          src: l,
+          async: !0,
+          onload: function () {
+            var a = window.webPixelsManager.init(e);
+            n(a);
+            var t = window.Shopify.analytics;
+            t.replayQueue.forEach(function (e) {
+              var n = e[0],
+                t = e[1],
+                r = e[2];
+              a.publishCustomEvent(n, t, r);
+            }),
+              (t.replayQueue = []),
+              (t.publish = a.publishCustomEvent),
+              (t.visitor = a.visitor);
+          },
+          onerror: function () {
+            var n = e.storefrontBaseUrl.replace(/\/$/, ""),
+              a = "".concat(
+                n,
+                "/.well-known/shopify/monorail/unstable/produce_batch"
+              ),
+              r = JSON.stringify({
+                metadata: { event_sent_at_ms: new Date().getTime() },
+                events: [
+                  {
+                    schema_id: "web_pixels_manager_load/2.0",
+                    payload: {
+                      version: t || "latest",
+                      page_url: self.location.href,
+                      status: "failed",
+                      error_msg: "".concat(l, " has failed to load"),
+                    },
+                    metadata: { event_created_at_ms: new Date().getTime() },
+                  },
+                ],
+              });
+            try {
+              if (self.navigator.sendBeacon.bind(self.navigator)(a, r))
+                return !0;
+            } catch (e) {}
+            var o = new XMLHttpRequest();
+            try {
+              return (
+                o.open("POST.html", a, !0),
+                o.setRequestHeader("Content-Type", "text/plain"),
+                o.send(r),
+                !0
+              );
+            } catch (e) {
+              console &&
+                console.warn &&
+                console.warn(
+                  "[Web Pixels Manager] Got an unhandled error while logging a load error."
+                );
+            }
+            return !1;
+          },
+        });
+      })(
+        {
+          shopId: 5581805,
+          storefrontBaseUrl: "https://tm-shopify067-alternative.myshopify.com",
+          cdnBaseUrl: "https://tm-shopify067-alternative.myshopify.com/cdn",
+          surface: "storefront-renderer",
+          enabledBetaFlags: ["5de24938", "3b4293f9"],
+          webPixelsConfigList: [
+            {
+              id: "shopify-app-pixel",
+              configuration: "{}",
+              eventPayloadVersion: "v1",
+              runtimeContext: "STRICT",
+              scriptVersion: "064",
+              apiClientId: "shopify-pixel",
+              type: "APP",
+              purposes: ["ANALYTICS", "MARKETING"],
+            },
+            {
+              id: "shopify-custom-pixel",
+              eventPayloadVersion: "v1",
+              runtimeContext: "LAX",
+              scriptVersion: "064",
+              apiClientId: "shopify-pixel",
+              type: "CUSTOM",
+              purposes: ["ANALYTICS", "MARKETING"],
+            },
+          ],
+          initData: {
+            cart: null,
+            checkout: null,
+            customer: null,
+            productVariants: [],
+          },
+        },
+        function pageEvents(webPixelsManagerAPI) {
+          webPixelsManagerAPI.publish("page_viewed");
+        },
+        "cdn.html",
+        "c8e6c2972f57ba512407366c74faae6b543486e4",
+        "b06604fcw35017947p5dc7d676m3b6e9e66"
+      );
+    </script>
+    <script>
+      window.ShopifyAnalytics = window.ShopifyAnalytics || {};
+      window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
+      window.ShopifyAnalytics.meta.currency = "USD";
+      var meta = { page: { pageType: "home" } };
+      for (var attr in meta) {
+        window.ShopifyAnalytics.meta[attr] = meta[attr];
+      }
+    </script>
+    <script>
+      window.ShopifyAnalytics.merchantGoogleAnalytics = function () {};
+    </script>
+    <script class="analytics">
+      (function () {
+        var customDocumentWrite = function (content) {
+          var jquery = null;
+
+          if (window.jQuery) {
+            jquery = window.jQuery;
+          } else if (window.Checkout && window.Checkout.$) {
+            jquery = window.Checkout.$;
+          }
+
+          if (jquery) {
+            jquery("body").append(content);
+          }
+        };
+
+        var hasLoggedConversion = function (token) {
+          if (token) {
+            return document.cookie.indexOf("loggedConversion=" + token) !== -1;
+          }
+          return false;
+        };
+
+        var setCookieIfConversion = function (token) {
+          if (token) {
+            var twoMonthsFromNow = new Date(Date.now());
+            twoMonthsFromNow.setMonth(twoMonthsFromNow.getMonth() + 2);
+
+            document.cookie =
+              "loggedConversion=" + token + "; expires=" + twoMonthsFromNow;
+          }
+        };
+
+        var trekkie =
+          (window.ShopifyAnalytics.lib =
+          window.trekkie =
+            window.trekkie || []);
+        if (trekkie.integrations) {
+          return;
+        }
+        trekkie.methods = [
+          "identify",
+          "page",
+          "ready",
+          "track",
+          "trackForm",
+          "trackLink",
+        ];
+        trekkie.factory = function (method) {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(method);
+            trekkie.push(args);
+            return trekkie;
+          };
+        };
+        for (var i = 0; i < trekkie.methods.length; i++) {
+          var key = trekkie.methods[i];
+          trekkie[key] = trekkie.factory(key);
+        }
+        trekkie.load = function (config) {
+          trekkie.config = config || {};
+          trekkie.config.initialDocumentCookie = document.cookie;
+          var first = document.getElementsByTagName("script")[0];
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.onerror = function (e) {
+            var scriptFallback = document.createElement("script");
+            scriptFallback.type = "text/javascript";
+            scriptFallback.onerror = function (error) {
+              var Monorail = {
+                produce: function produce(monorailDomain, schemaId, payload) {
+                  var currentMs = new Date().getTime();
+                  var event = {
+                    schema_id: schemaId,
+                    payload: payload,
+                    metadata: {
+                      event_created_at_ms: currentMs,
+                      event_sent_at_ms: currentMs,
+                    },
+                  };
+                  return Monorail.sendRequest(
+                    "https://" + monorailDomain + "/v1/produce",
+                    JSON.stringify(event)
+                  );
+                },
+                sendRequest: function sendRequest(endpointUrl, payload) {
+                  // Try the sendBeacon API
+                  if (
+                    window &&
+                    window.navigator &&
+                    typeof window.navigator.sendBeacon === "function" &&
+                    typeof window.Blob === "function" &&
+                    !Monorail.isIos12()
+                  ) {
+                    var blobData = new window.Blob([payload], {
+                      type: "text/plain",
+                    });
+
+                    if (window.navigator.sendBeacon(endpointUrl, blobData)) {
+                      return true;
+                    } // sendBeacon was not successful
+                  } // XHR beacon
+
+                  var xhr = new XMLHttpRequest();
+
+                  try {
+                    xhr.open("POST.html", endpointUrl);
+                    xhr.setRequestHeader("Content-Type", "text/plain");
+                    xhr.send(payload);
+                  } catch (e) {
+                    console.log(e);
+                  }
+
+                  return false;
+                },
+                isIos12: function isIos12() {
+                  return (
+                    window.navigator.userAgent.lastIndexOf(
+                      "iPhone; CPU iPhone OS 12_"
+                    ) !== -1 ||
+                    window.navigator.userAgent.lastIndexOf(
+                      "iPad; CPU OS 12_"
+                    ) !== -1
+                  );
+                },
+              };
+              Monorail.produce(
+                "monorail-edge.shopifysvc.com",
+                "trekkie_storefront_load_errors/1.1",
+                {
+                  shop_id: 5581805,
+                  theme_id: 120246304835,
+                  app_name: "storefront",
+                  context_url: window.location.href,
+                  source_url:
+                    "{% static 'ecommerce/cdn/s/trekkie.storefront.dd626a6a6fbdab104f8779acc4331c330134c832.min.js' %}",
+                }
+              );
+            };
+            scriptFallback.async = true;
+            scriptFallback.src =
+              "{% static 'ecommerce/cdn/s/trekkie.storefront.dd626a6a6fbdab104f8779acc4331c330134c832.min.js' %}";
+            first.parentNode.insertBefore(scriptFallback, first);
+          };
+          script.async = true;
+          script.src =
+            "{% static 'ecommerce/cdn/s/trekkie.storefront.dd626a6a6fbdab104f8779acc4331c330134c832.min.js' %}";
+          first.parentNode.insertBefore(script, first);
+        };
+        trekkie.load({
+          Trekkie: {
+            appName: "storefront",
+            development: false,
+            defaultAttributes: {
+              shopId: 5581805,
+              isMerchantRequest: null,
+              themeId: 120246304835,
+              themeCityHash: "8642541242974664325",
+              contentLanguage: "en",
+              currency: "USD",
+            },
+            isServerSideCookieWritingEnabled: true,
+            monorailRegion: "shop_domain",
+            enabledBetaFlags: ["bbcf04e6"],
+          },
+          "Session Attribution": {},
+          S2S: {
+            facebookCapiEnabled: false,
+            source: "trekkie-storefront-renderer",
+          },
+        });
+
+        var loaded = false;
+        trekkie.ready(function () {
+          if (loaded) return;
+          loaded = true;
+
+          window.ShopifyAnalytics.lib = window.trekkie;
+
+          var originalDocumentWrite = document.write;
+          document.write = customDocumentWrite;
+          try {
+            window.ShopifyAnalytics.merchantGoogleAnalytics.call(this);
+          } catch (error) {}
+          document.write = originalDocumentWrite;
+
+          window.ShopifyAnalytics.lib.page(null, { pageType: "home" });
+
+          var match = window.location.pathname.match(
+            /checkouts\/(.+)\/(thank_you|post_purchase)/
+          );
+          var token = match ? match[1] : undefined;
+          if (!hasLoggedConversion(token)) {
+            setCookieIfConversion(token);
+          }
+        });
+
+        var eventsListenerScript = document.createElement("script");
+        eventsListenerScript.async = true;
+        eventsListenerScript.src =
+          "cdn/shopifycloud/shopify/assets/shop_events_listener-61fa9e0a912c675e178777d2b27f6cbd482f8912a6b0aa31fa3515985a8cd626.2c.delaye";
+        document
+          .getElementsByTagName("head")[0]
+          .appendChild(eventsListenerScript);
+      })();
+    </script>
+    <script class="boomerang">
+      (function () {
+        if (
+          window.BOOMR &&
+          (window.BOOMR.version || window.BOOMR.snippetExecuted)
+        ) {
+          return;
+        }
+        window.BOOMR = window.BOOMR || {};
+        window.BOOMR.snippetStart = new Date().getTime();
+        window.BOOMR.snippetExecuted = true;
+        window.BOOMR.snippetVersion = 12;
+        window.BOOMR.application = "storefront-renderer";
+        window.BOOMR.themeName = "";
+        window.BOOMR.themeVersion = "";
+        window.BOOMR.shopId = 5581805;
+        window.BOOMR.themeId = 120246304835;
+        window.BOOMR.renderRegion = "gcp-europe-west1";
+        window.BOOMR.url =
+          "{% static 'ecommerce/cdn/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js' %}";
+        var where =
+          document.currentScript || document.getElementsByTagName("script")[0];
+        var parentNode = where.parentNode;
+        var promoted = false;
+        var LOADER_TIMEOUT = 3000;
+        function promote() {
+          if (promoted) {
+            return;
+          }
+          var script = document.createElement("script");
+          script.id = "boomr-scr-as";
+          script.src = window.BOOMR.url;
+          script.async = true;
+          parentNode.appendChild(script);
+          promoted = true;
+        }
+        function iframeLoader(wasFallback) {
+          promoted = true;
+          var dom, bootstrap, iframe, iframeStyle;
+          var doc = document;
+          var win = window;
+          window.BOOMR.snippetMethod = wasFallback ? "if" : "i";
+          bootstrap = function (parent, scriptId) {
+            var script = doc.createElement("script");
+            script.id = scriptId || "boomr-if-as";
+            script.src = window.BOOMR.url;
+            BOOMR_lstart = new Date().getTime();
+            parent = parent || doc.body;
+            parent.appendChild(script);
+          };
+          if (
+            !window.addEventListener &&
+            window.attachEvent &&
+            navigator.userAgent.match(/MSIE [67]./)
+          ) {
+            window.BOOMR.snippetMethod = "s";
+            bootstrap(parentNode, "boomr-async");
+            return;
+          }
+          iframe = document.createElement("IFRAME");
+          iframe.src = "about:blank";
+          iframe.title = "";
+          iframe.role = "presentation";
+          iframe.loading = "eager";
+          iframeStyle = (iframe.frameElement || iframe).style;
+          iframeStyle.width = 0;
+          iframeStyle.height = 0;
+          iframeStyle.border = 0;
+          iframeStyle.display = "none";
+          parentNode.appendChild(iframe);
+          try {
+            win = iframe.contentWindow;
+            doc = win.document.open();
+          } catch (e) {
+            dom = document.domain;
+            iframe.src =
+              "javascript:var d=document.open();d.domain='" +
+              dom +
+              "';void(0);";
+            win = iframe.contentWindow;
+            doc = win.document.open();
+          }
+          if (dom) {
+            doc._boomrl = function () {
+              this.domain = dom;
+              bootstrap();
+            };
+            doc.write("<body onload='document._boomrl();'>");
+          } else {
+            win._boomrl = function () {
+              bootstrap();
+            };
+            if (win.addEventListener) {
+              win.addEventListener("load", win._boomrl, false);
+            } else if (win.attachEvent) {
+              win.attachEvent("onload", win._boomrl);
+            }
+          }
+          doc.close();
+        }
+        var link = document.createElement("link");
+        if (
+          link.relList &&
+          typeof link.relList.supports === "function" &&
+          link.relList.supports("preload") &&
+          "as" in link
+        ) {
+          window.BOOMR.snippetMethod = "p";
+          link.href = window.BOOMR.url;
+          link.rel = "preload";
+          link.as = "script";
+          link.addEventListener("load", promote);
+          link.addEventListener("error", function () {
+            iframeLoader(true);
+          });
+          setTimeout(function () {
+            if (!promoted) {
+              iframeLoader(true);
+            }
+          }, LOADER_TIMEOUT);
+          BOOMR_lstart = new Date().getTime();
+          parentNode.appendChild(link);
+        } else {
+          iframeLoader(false);
+        }
+        function boomerangSaveLoadTime(e) {
+          window.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+        }
+        if (window.addEventListener) {
+          window.addEventListener("load", boomerangSaveLoadTime, false);
+        } else if (window.attachEvent) {
+          window.attachEvent("onload", boomerangSaveLoadTime);
+        }
+        if (document.addEventListener) {
+          document.addEventListener("onBoomerangLoaded", function (e) {
+            e.detail.BOOMR.init({
+              ResourceTiming: {
+                enabled: true,
+                trackedResourceTypes: ["script", "img", "css"],
+              },
+            });
+            e.detail.BOOMR.t_end = new Date().getTime();
+          });
+        } else if (document.attachEvent) {
+          document.attachEvent("onpropertychange", function (e) {
+            if (!e) e = event;
+            if (e.propertyName === "onBoomerangLoaded") {
+              e.detail.BOOMR.init({
+                ResourceTiming: {
+                  enabled: true,
+                  trackedResourceTypes: ["script", "img", "css"],
+                },
+              });
+              e.detail.BOOMR.t_end = new Date().getTime();
+            }
+          });
+        }
+      })();
+    </script>
+  </head>
+
+  <body class="template-index scheme_1">
+    <div class="page_wrapper">
+      <div id="page_preloader__bg">
+        <img
+          id="page_preloader__img"
+          src="{% static 'ecommerce/cdn/shop/t/3/assets/shopify_logo952a.gif' %}"
+          alt=""
+        />
+      </div>
+
+      <script>
+        preloaderBg = document.getElementById("page_preloader__bg");
+        preloaderImg = document.getElementById("page_preloader__img");
+
+        window.addEventListener("load", function () {
+          preloaderBg.classList.add("off");
+          preloaderImg.classList.add("off");
+        });
+      </script>
+
+      <div id="shopify-section-helper" class="shopify-section"></div>
+
+      <div id="shopify-section-header-2" class="shopify-section">
+        <div id="pseudo_sticky_block"></div>
+
+        <header
+          id="page_header"
+          class="header_layout_2"
+          style="background-color: #f8f1e8"
+        >
+          <div class="page_container">
+            <div class="top_pannel" style="background-color: #000000">
+              <div class="container_big top_pannel_content_wrapper">
+                <a class="top_text_link" href="pages/delivery-info.html"
+                  >WELCOME TO iDEAL ONLINE STORE</a
+                >
+
+                <div class="header_currency">
+                  <script>
+                    theme.shopCurrency = "USD";
+                    theme.moneyFormat = "${{amount}}";
+                    theme.moneyFormatCurrency = "${{amount}} USD";
+                  </script>
+
+                  <script src="{% static 'ecommerce/cdn.shopify.com/s/javascripts/currencies.js' %}"></script>
+                  <script src="{% static 'ecommerce/cdn/shop/t/3/assets/currency-toolsc67c.js' %}"></script>
+                </div>
+              </div>
+            </div>
+
+            <div class="header_row_1">
+              <div class="container container_big">
+                <div class="header_item_left">
+                  <h1>
+                    <a class="header_logo" href="index.html">
+                      <img
+                        src="{% static 'ecommerce/cdn/shop/files/Group_526_170x28_crop_center@2xff27.png' %}"
+                        alt="Multifly Ganjan"
+                        style="max-width: 170px"
+                      />
+                    </a>
+                  </h1>
+
+                  <nav id="megamenu" class="megamenu">
+                    <h2
+                      id="megamenu_mobile_toggle"
+                      style="display: none"
+                      title="Menu"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect y="3" width="20" height="2" fill="#fff" />
+                        <rect y="9" width="20" height="2" fill="#fff" />
+                        <rect y="15" width="20" height="2" fill="#fff" />
+                      </svg>
+                    </h2>
+
+                    <div id="megamenu_mobile_close" style="display: none">
+                      <div class="close_icon"></div>
+                    </div>
+
+                    <ul id="megamenu_level__1" class="level_1">
+                      <li
+                        class="level_1__item level_2__small"
+                        style="display: inline-block"
+                      >
+                        <a class="level_1__link" href="{% url 'ecommerce:index' %}"
+                          >Home
+                          <i
+                            class="level_1__trigger megamenu_trigger"
+                            data-submenu="menu_1568649904694"
+                          ></i>
+                        </a>
+
+                        <ul
+                          class="level_2"
+                          id="menu_1568649904694"
+                          style="display: none"
+                        >
+                          <li class="item_link-linklist">
+                            <div>
+                              <ul class="level_3">
+                                <li class="level_3__item">
+                                  <a class="level_3__link" href="index.html"
+                                    >Home</a
+                                  >
+                                </li>
+
+                                <li class="level_3__item">
+                                  <a
+                                    class="level_3__link"
+                                    href="collections/all.html"
+                                    >Catalog</a
+                                  >
+                                </li>
+
+                                <li class="level_3__item with_ul">
+                                  <a
+                                    class="level_3__link"
+                                    href="collections.html"
+                                    >Collections<i
+                                      class="level_3__trigger megamenu_trigger"
+                                      data-submenu="submenu_1568649904694-3"
+                                    ></i
+                                  ></a>
+
+                                  <ul
+                                    class="level_3_2 droped_linklist"
+                                    id="submenu_1568649904694-3"
+                                  >
+                                    <li class="level_3_2_item">
+                                      <a
+                                        class="level_3_2_link"
+                                        href="collections/beauty.html"
+                                        >High thc</a
+                                      >
+                                    </li>
+
+                                    <li class="level_3_2_item">
+                                      <a
+                                        class="level_3_2_link"
+                                        href="collections/hybrid-strain.html"
+                                        >Hybrid strain</a
+                                      >
+                                    </li>
+
+                                    <li class="level_3_2_item">
+                                      <a
+                                        class="level_3_2_link"
+                                        href="collections/indica-strain.html"
+                                        >Indica strain</a
+                                      >
+                                    </li>
+
+                                    <li class="level_3_2_item">
+                                      <a
+                                        class="level_3_2_link"
+                                        href="collections/personal-care.html"
+                                        >Personal care</a
+                                      >
+                                    </li>
+
+                                    <li class="level_3_2_item">
+                                      <a
+                                        class="level_3_2_link"
+                                        href="collections/sale.html"
+                                        >Sale</a
+                                      >
+                                    </li>
+
+                                    <li class="level_3_2_item">
+                                      <a
+                                        class="level_3_2_link"
+                                        href="collections/sativa-strain.html"
+                                        >Sativa strain</a
+                                      >
+                                    </li>
+                                  </ul>
+                                </li>
+
+                                <li class="level_3__item">
+                                  <a
+                                    class="level_3__link"
+                                    href="blogs/blog.html"
+                                    >Blog</a
+                                  >
+                                </li>
+
+                                <li class="level_3__item">
+                                  <a
+                                    class="level_3__link"
+                                    href="pages/about-us.html"
+                                    >About Us</a
+                                  >
+                                </li>
+
+                                <li class="level_3__item">
+                                  <a
+                                    class="level_3__link"
+                                    href="pages/contact-us.html"
+                                    >Contact us</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li
+                        class="level_1__item level_2__links"
+                        style="display: inline-block"
+                      >
+                        <a class="level_1__link" href="collections/all.html"
+                          >Catalog
+                          <i
+                            class="level_1__trigger megamenu_trigger"
+                            data-submenu="menu_1568710279425"
+                          ></i>
+                        </a>
+
+                        <ul
+                          class="level_2"
+                          id="menu_1568710279425"
+                          style="display: none"
+                        >
+                          <li class="container item_3link-2ban">
+                            <div class="row">
+                              <div class="megamenu_col__item megamenu_linklist">
+                                <h3 class="visible">
+                                  Collections
+                                  <i
+                                    class="level_2__trigger megamenu_trigger"
+                                    data-submenu="menu_1568710279425-1"
+                                  ></i>
+                                </h3>
+
+                                <ul class="level_3" id="menu_1568710279425-1">
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/beauty.html"
+                                      >High thc</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/hybrid-strain.html"
+                                      >Hybrid strain</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/indica-strain.html"
+                                      >Indica strain</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/personal-care.html"
+                                      >Personal care</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/sale.html"
+                                      >Sale</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/sativa-strain.html"
+                                      >Sativa strain</a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <div class="megamenu_col__item megamenu_linklist">
+                                <h3 class="visible">
+                                  Main Menu
+                                  <i
+                                    class="level_2__trigger megamenu_trigger"
+                                    data-submenu="menu_1568710279425-2"
+                                  ></i>
+                                </h3>
+
+                                <ul class="level_3" id="menu_1568710279425-2">
+                                  <li class="level_3__item">
+                                    <a class="level_3__link" href="index.html"
+                                      >Home</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/all.html"
+                                      >Catalog</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections.html"
+                                      >Collections</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="blogs/blog.html"
+                                      >Blog</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/about-us.html"
+                                      >About Us</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/contact-us.html"
+                                      >Contact us</a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <div class="megamenu_col__item megamenu_linklist">
+                                <h3 class="visible">
+                                  Our company
+                                  <i
+                                    class="level_2__trigger megamenu_trigger"
+                                    data-submenu="menu_1568710279425-3"
+                                  ></i>
+                                </h3>
+
+                                <ul class="level_3" id="menu_1568710279425-3">
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/delivery-info.html"
+                                      >Delivery</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/privacy-policy.html"
+                                      >Legal Notice</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/about-us.html"
+                                      >About us</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/contact-us.html"
+                                      >Contact us</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/privacy-policy.html"
+                                      >Terms and conditions of use</a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <div
+                                class="megamenu_col__item megamenu_col__banner"
+                              >
+                                <a
+                                  class="megamenu_banner"
+                                  id="banner_catalog_1"
+                                  href="collections/personal-care.html"
+                                >
+                                  <img
+                                    src="{% static 'ecommerce/cdn/shop/files/collection_1_280x380_crop_center3f72.png' %}"
+                                    alt=""
+                                  />
+                                  <div class="caption_text">
+                                    <h4>2021</h4>
+
+                                    <h5>Edibles</h5>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div
+                                class="megamenu_col__item megamenu_col__banner"
+                              >
+                                <a
+                                  class="megamenu_banner"
+                                  id="banner_catalog_2"
+                                  href="collections/sale.html"
+                                >
+                                  <img
+                                    src="{% static 'ecommerce/cdn/shop/files/collection_2_280x380_crop_center52f2.png' %}"
+                                    alt=""
+                                  />
+                                  <div class="caption_text">
+                                    <h4>SALE</h4>
+
+                                    <h5>Get up to 20% off</h5>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li
+                        class="level_1__item level_2__links"
+                        style="display: inline-block"
+                      >
+                        <a class="level_1__link" href="collections.html"
+                          >Collections
+                          <i
+                            class="level_1__trigger megamenu_trigger"
+                            data-submenu="menu_1568710505955"
+                          ></i>
+                        </a>
+
+                        <ul
+                          class="level_2"
+                          id="menu_1568710505955"
+                          style="display: none"
+                        >
+                          <li class="container item_2link-2ban">
+                            <div class="row">
+                              <div class="megamenu_col__item megamenu_linklist">
+                                <h3>
+                                  Collections
+                                  <i
+                                    class="level_2__trigger megamenu_trigger"
+                                    data-submenu="menu_1568710505955-1"
+                                  ></i>
+                                </h3>
+
+                                <ul class="level_3" id="menu_1568710505955-1">
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/beauty.html"
+                                      >High thc</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/hybrid-strain.html"
+                                      >Hybrid strain</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/indica-strain.html"
+                                      >Indica strain</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/personal-care.html"
+                                      >Personal care</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/sale.html"
+                                      >Sale</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/sativa-strain.html"
+                                      >Sativa strain</a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <div class="megamenu_col__item megamenu_linklist">
+                                <h3>
+                                  Main Menu
+                                  <i
+                                    class="level_2__trigger megamenu_trigger"
+                                    data-submenu="menu_1568710505955-2"
+                                  ></i>
+                                </h3>
+
+                                <ul class="level_3" id="menu_1568710505955-2">
+                                  <li class="level_3__item">
+                                    <a class="level_3__link" href="index.html"
+                                      >Home</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections/all.html"
+                                      >Catalog</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="collections.html"
+                                      >Collections</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="blogs/blog.html"
+                                      >Blog</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/about-us.html"
+                                      >About Us</a
+                                    >
+                                  </li>
+
+                                  <li class="level_3__item">
+                                    <a
+                                      class="level_3__link"
+                                      href="pages/contact-us.html"
+                                      >Contact us</a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+
+                              <div
+                                class="megamenu_col__item megamenu_col__banner"
+                              >
+                                <a
+                                  class="megamenu_banner"
+                                  href="collections/hybrid-strain.html"
+                                >
+                                  <img
+                                    src="{% static 'ecommerce/cdn/shop/files/blog_2_380x240_crop_center4257.png' %}"
+                                    alt=""
+                                  />
+                                  <div class="caption_text">
+                                    <h4>Best sellers</h4>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div
+                                class="megamenu_col__item megamenu_col__banner"
+                              >
+                                <a
+                                  class="megamenu_banner"
+                                  href="collections/indica-strain.html"
+                                >
+                                  <img
+                                    src="{% static 'ecommerce/cdn/shop/files/blog_1_380x240_crop_centera176.png' %}"
+                                    alt=""
+                                  />
+                                  <div class="caption_text">
+                                    <h4>Pod systems</h4>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li class="level_1__item" style="display: inline-block">
+                        <a class="level_1__link" href="pages/contact-us.html"
+                          >Contact Us
+                        </a>
+                      </li>
+
+                      <li class="megamenu_footer">
+                        <div class="menu_header_account">
+                          <span>Account</span>
+
+                          <a href="account/login4236.html">Account</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+
+                <div class="header_item_right">
+                  <div class="header_search">
+                    <span class="search_toggle">
+                      <span class="link_text">Search</span>
+
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 18.5787L16.2437 14.8223C17.4619 13.2995 18.2741 11.269 18.2741 9.13706C18.2741 4.06091 14.2132 0 9.13706 0C4.06091 0 0 4.06091 0 9.13706C0 14.2132 4.06091 18.2741 9.13706 18.2741C11.269 18.2741 13.2995 17.5635 14.8223 16.2437L18.5787 20L20 18.5787ZM2.03046 9.13706C2.03046 5.17766 5.17766 2.03046 9.13706 2.03046C13.0964 2.03046 16.2437 5.17766 16.2437 9.13706C16.2437 13.0964 13.0964 16.2437 9.13706 16.2437C5.17766 16.2437 2.03046 13.0964 2.03046 9.13706Z"
+                        />
+                      </svg>
+                    </span>
+                    <div class="search_form_wrap">
+                      <form
+                        action="https://tm-shopify067-alternative.myshopify.com/search"
+                        method="get"
+                        role="search"
+                        class="search_form"
+                      >
+                        <span class="header_serch_caption"
+                          >Looking for something special?</span
+                        >
+                        <input
+                          type="search"
+                          name="q"
+                          placeholder="Search"
+                          aria-label="Search"
+                        />
+                        <label for="header_search_submit">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M20 18.5787L16.2437 14.8223C17.4619 13.2995 18.2741 11.269 18.2741 9.13706C18.2741 4.06091 14.2132 0 9.13706 0C4.06091 0 0 4.06091 0 9.13706C0 14.2132 4.06091 18.2741 9.13706 18.2741C11.269 18.2741 13.2995 17.5635 14.8223 16.2437L18.5787 20L20 18.5787ZM2.03046 9.13706C2.03046 5.17766 5.17766 2.03046 9.13706 2.03046C13.0964 2.03046 16.2437 5.17766 16.2437 9.13706C16.2437 13.0964 13.0964 16.2437 9.13706 16.2437C5.17766 16.2437 2.03046 13.0964 2.03046 9.13706Z"
+                            />
+                          </svg>
+                        </label>
+                        <input type="submit" id="header_search_submit" />
+                        <span class="search_form_close">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13.7156 5L15 6.14286L10.993 10L15 13.8571L13.7156 15L9.95417 11.2857L6.28442 15L5 13.8571L8.9342 10L5 6.14286L6.28442 5L9.95417 8.71429L13.7156 5Z"
+                              fill="#E4E4E4"
+                            />
+                          </svg>
+                        </span>
+                      </form>
+
+                      <script>
+                        theme.searchAjaxOn = true;
+                      </script>
+
+                      <div id="search_result_container"></div>
+
+                      <div class="search_form_cover"></div>
+                    </div>
+                  </div>
+
+                  <div class="header_account">
+                    <a href="account/login4236.html" title="Account">
+                      <span class="link_text">Account</span>
+                    </a>
+                  </div>
+
+                  <div class="header_cart" id="main__cart_item">
+                    <a class="cart_link" href="cart.html">
+                      <span class="link_text">Cart:</span>
+
+                      <span id="cart_items" class="header_cart_items"> 0 </span>
+                    </a>
+
+                    <script>
+                      theme.cartAjaxOn = true;
+                      theme.cartAjaxTextEmpty =
+                        "It appears that your cart is currently empty";
+                      theme.cartAjaxTextTotalPrice = "Total price";
+                      theme.cartAjaxTextGoCart = "Go to cart";
+                      theme.cartAjaxTextClearCart = "Clear cart";
+                    </script>
+                    <div class="cart_content_wrap">
+                      <div class="cart_content_preloader off">
+                        <div class="global_loader"></div>
+                      </div>
+                      <div id="cart_content_box">
+                        <p class="alert alert-warning">
+                          It appears that your cart is currently empty
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <div class="page_container">
+        {% block full_page_content %}
+        <div class="main_content {% block main_content_extra_classes %}{% endblock%}">{% block page_content %} {% endblock %}</div>
+        {% endblock %}
+
+        <div id="shopify-section-footer-1" class="shopify-section">
+          <footer class="footer_type_1">
+            <div class="footer_row__1">
+              <div class="footer_main">
+                <div class="container_big">
+                  <div class="col-sm-3 footer_block footer_block__2_1">
+                    <div class="footer_item footer_item__links">
+                      <h6 class="linklist_menu_title">Your account</h6>
+
+                      <ul class="list_links">
+                        <li>
+                          <a href="account/login4236.html">Personal info</a>
+                        </li>
+
+                        <li>
+                          <a href="account/login4236.html">Orders</a>
+                        </li>
+
+                        <li>
+                          <a href="cart.html">Credit slips</a>
+                        </li>
+
+                        <li>
+                          <a href="account/login4918.html">Addresses</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3 footer_block">
+                    <div class="footer_item footer_item__contacts">
+                      <h6 class="linklist_menu_title">CUSTOMER SERVICE</h6>
+                      <ul class="list_links">
+                        <li>
+                          <div class="contact_address">
+                            <p>Monday to Friday</p>
+                            <p>10am - 6.30pm (NewYork time)</p>
+                          </div>
+                        </li>
+                        <li>
+                          <a
+                            class="contact_phone tel_ltr"
+                            href="tel:+(001) 23 45 67 89"
+                          >
+                            +(001) 23 45 67 89</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="contact_email"
+                            href="mailto:shopify@zemez.io"
+                            >shopify@zemez.io</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3 footer_block footer_block__2_1">
+                    <div class="footer_item footer_item__contacts">
+                      <h6 class="linklist_menu_title">OUR GUARANTEES</h6>
+                      <ul class="list_links">
+                        <li>
+                          <div class="contact_address">
+                            <p>Shipping in 3 days</p>
+                            <p>Free returns within 14 days</p>
+                            <p>Secure payments</p>
+                          </div>
+                        </li>
+                        <li></li>
+                        <li></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3 footer_block">
+                    <div class="footer_item footer_item__links">
+                      <h6 class="linklist_menu_title">Our company</h6>
+
+                      <ul class="list_links">
+                        <li>
+                          <a href="pages/delivery-info.html">Delivery</a>
+                        </li>
+
+                        <li>
+                          <a href="pages/privacy-policy.html">Legal Notice</a>
+                        </li>
+
+                        <li>
+                          <a href="pages/about-us.html">About us</a>
+                        </li>
+
+                        <li>
+                          <a href="pages/contact-us.html">Contact us</a>
+                        </li>
+
+                        <li>
+                          <a href="pages/privacy-policy.html"
+                            >Terms and conditions of use</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer_row__2">
+              <div class="footer_bottom_pannel container_big">
+                <div class="footer_wrap_2 footer_copyright">
+                  © 2024.
+                  <a
+                    target="_blank"
+                    rel="nofollow"
+                    href="https://www.shopify.com/website/builder?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore"
+                    >Website builder by Shopify</a
+                  >
+                </div>
+
+                <div class="footer_wrap_2">
+                  <div class="footer_payments"></div>
+                </div>
+
+                <ul class="footer_wrap_2 social_menu">
+                  <li>
+                    <a href="https://www.facebook.com/zemezlab/"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a href="https://twitter.com/zemezlab"
+                      ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a href="https://www.instagram.com/zemezlab"
+                      ><i class="fa fa-instagram" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a href="index.html"
+                      ><i class="fa fa-pinterest" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UCPW43un8VFXHe9LxKpR_2Hg"
+                      ><i class="fa fa-youtube" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+      <a id="back_top" href="#">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </a>
+    </div>
+  </body>
+</html>

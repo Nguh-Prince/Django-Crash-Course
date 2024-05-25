@@ -9,6 +9,9 @@ class Collection(models.Model):
     class Meta:
         verbose_name = "Collection"
         verbose_name_plural = "Collections"
+
+    def __str__(self) -> str:
+        return self.name
     
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -16,6 +19,7 @@ class Product(models.Model):
     description = models.TextField(blank=True, null=True)
     cover_image = models.FileField(null=True)
     quantity = models.IntegerField(default=0)
+    time_created = models.DateTimeField(auto_now_add=True)
 
     # validate the price and quantity using the clean method and write a test
     def clean(self) -> None:

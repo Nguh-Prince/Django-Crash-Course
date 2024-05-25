@@ -1,0 +1,261 @@
+{% extends 'ecommerce/base.html' %}
+{% load static %}
+
+{% block page_content %} 
+<div class="section_wrap flexible_block__large">
+  <div
+    class="img_placeholder__wrap img_placeholder__large"
+    style="background-image: url({% static 'ecommerce/cdn/shop/files/banner_1_1920x775_crop_topc6b5.png' %});"
+  ></div>
+
+  <div class="section_txt align_left full_width">
+    <div class="container">
+      <div
+        class="caption_text"
+        style="background-color: Liquid error (sections/index-image-with-text-overlay line 59): Alpha must be a float between 0 and 1"
+      >
+        <h4>BEST MARIJUANA PRODUCTS</h4>
+
+        <h2><p>Hemp flowers</p></h2>
+
+        <p>Order Cannabis online!</p>
+
+        <a href="collections.html" class="btn">
+          <span>
+            shop now
+            <svg
+              width="14"
+              height="12"
+              viewBox="0 0 14 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.777344 6.77789V5.22233H10.1107L6.99957 2.11122L7.77734 0.555664L13.2218 6.00011L7.77734 11.4446L6.99957 9.889L10.1107 6.77789H0.777344Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tab_content_wrapper">
+  <div class="tab_navigation row justify-content-start align-items-baseline">
+    <h4 class="section_heading">New Arrivals</h4>
+    <h5 class="link_text">
+      <a href="collections.html">
+        View all
+        <svg
+          width="14"
+          height="12"
+          viewBox="0 0 14 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.777344 6.77789V5.22233H10.1107L6.99957 2.11122L7.77734 0.555664L13.2218 6.00011L7.77734 11.4446L6.99957 9.889L10.1107 6.77789H0.777344Z"
+            fill="#6C6E71"
+          />
+        </svg>
+      </a>
+    </h5>
+  </div>
+
+  <div class="tab_content">
+    <div class="tab_item tab_item_1 active">
+      <div
+        class="products_carousel swiper-container"
+        id="products_carousel_1"
+        data-products="12"
+      >
+      <!-- Display the new arrivals passed from the view -->
+        <div class="swiper-wrapper product_listing__main product_limit_12">
+          {% for arrival in new_arrivals %}
+          <div class="swiper-slide">
+            <div class="product_item" id="product__{{ arrival.name }}">
+              <div class="product_img_wrap">
+                <div class="product_img">
+                  <a
+                    class="img_change"
+                    href=""
+                  >
+                    <img
+                      class="lazyload"
+                      src="{{ arrival.cover_image.url }}"
+                      data-src="{{ arrival.cover_image.url }}"
+                      alt="{{ arrival.name }}"
+                    />
+
+                    <div class="bade_wrap">
+                      <span class="product_badge new">NEW</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product_links">
+                  <div class="product_links__subbutton">
+                    <a
+                      class="js_quick_view quick_view_btn"
+                      href="products/afghan-kush.html"
+                      title="Quick view"
+                      ><span>Quick view</span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8 6H10V8H12V10H10V12H8V10H6V8H8V6Z" />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M20 18.5787L16.2437 14.8223C17.4619 13.2995 18.2741 11.269 18.2741 9.13706C18.2741 4.06091 14.2132 0 9.13706 0C4.06091 0 0 4.06091 0 9.13706C0 14.2132 4.06091 18.2741 9.13706 18.2741C11.269 18.2741 13.2995 17.5635 14.8223 16.2437L18.5787 20L20 18.5787ZM2.03046 9.13706C2.03046 5.17766 5.17766 2.03046 9.13706 2.03046C13.0964 2.03046 16.2437 5.17766 16.2437 9.13706C16.2437 13.0964 13.0964 16.2437 9.13706 16.2437C5.17766 16.2437 2.03046 13.0964 2.03046 9.13706Z"
+                        />
+                      </svg>
+                    </a>
+
+                    <a
+                      href="account/login.html"
+                      class="wishlist_btn wishlist_login"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10 18L8.74 16.7826C4.06 12.7826 1 10.087 1 6.78261C1 4.08696 3.16 2 5.95 2C7.48 2 9.01 2.69565 10 3.82609C10.99 2.69565 12.52 2 14.05 2C16.84 2 19 4.08696 19 6.78261C19 10.087 15.94 12.7826 11.26 16.7826L10 18Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        ></path></svg
+                    ></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product_info">
+                <div class="product_links product_links_listing">
+                  <div class="product_links__subbutton">
+                    <a
+                      class="js_quick_view quick_view_btn"
+                      href="products/afghan-kush.html"
+                      title="Quick view"
+                      ><span>Quick view</span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8 6H10V8H12V10H10V12H8V10H6V8H8V6Z" />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M20 18.5787L16.2437 14.8223C17.4619 13.2995 18.2741 11.269 18.2741 9.13706C18.2741 4.06091 14.2132 0 9.13706 0C4.06091 0 0 4.06091 0 9.13706C0 14.2132 4.06091 18.2741 9.13706 18.2741C11.269 18.2741 13.2995 17.5635 14.8223 16.2437L18.5787 20L20 18.5787ZM2.03046 9.13706C2.03046 5.17766 5.17766 2.03046 9.13706 2.03046C13.0964 2.03046 16.2437 5.17766 16.2437 9.13706C16.2437 13.0964 13.0964 16.2437 9.13706 16.2437C5.17766 16.2437 2.03046 13.0964 2.03046 9.13706Z"
+                        />
+                      </svg>
+                    </a>
+
+                    <a
+                      href="account/login.html"
+                      class="wishlist_btn wishlist_login"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10 18L8.74 16.7826C4.06 12.7826 1 10.087 1 6.78261C1 4.08696 3.16 2 5.95 2C7.48 2 9.01 2.69565 10 3.82609C10.99 2.69565 12.52 2 14.05 2C16.84 2 19 4.08696 19 6.78261C19 10.087 15.94 12.7826 11.26 16.7826L10 18Z"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        ></path></svg
+                    ></a>
+                  </div>
+                </div>
+                <div class="product_color"></div>
+
+                <p class="product_vendor">Holy Weed</p>
+
+                <p class="product_name">
+                  <a href="products/afghan-kush.html">{{ arrival.name }}</a>
+                </p>
+
+                <p class="product_price">
+                  <span class="money main_price">${{arrival.price}}</span>
+                </p>
+
+                <!-- <p class="product_desc">
+                  Health is one of the most important things in our life. We
+                  think that it is a real luck to have a strong health. Our way
+                  of life doesn’t increase the physiological condition of our
+                  body. Alcohol, ...
+                </p> -->
+
+                <form
+                  method="post"
+                  action="https://tm-shopify067-alternative.myshopify.com/cart/add"
+                  class="add_to_cart_form"
+                >
+                  <a
+                    class="btn btn_options js_quick_view"
+                    href="products/afghan-kush.html"
+                  >
+                    <span>Choose variant</span>
+                    <svg
+                      width="14"
+                      height="12"
+                      viewBox="0 0 14 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.777344 6.77789V5.22233H10.1107L6.99957 2.11122L7.77734 0.555664L13.2218 6.00011L7.77734 11.4446L6.99957 9.889L10.1107 6.77789H0.777344Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </form>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div id="pagination_1" class="swiper_pagination"></div>
+
+      <div id="slider_prev_1" class="swiper_btn swiper_btn__prev">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M14 15L9 10L14 5L13 3L6 10L13 17L14 15Z" fill="#171717" />
+        </svg>
+      </div>
+      <div id="slider_next_1" class="swiper_btn swiper_btn__next">
+        <svg
+          width="8"
+          height="14"
+          viewBox="0 0 8 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 12L5 7L0 2L1 0L8 7L1 14L0 12Z" fill="#171717" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
