@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import *
+from .forms import CustomerFeedbackForm
 
 def index(request):
     recent_products = Product.objects.order_by("-time_created")[:5]
@@ -34,3 +35,27 @@ def collections(request, collection_id=None):
         # "collection_id": collection_id,
         "collection": collections.filter(id=collection_id).first()
     })
+
+def contact(request):
+    form = CustomerFeedbackForm()
+
+    context = {
+        "message": None,
+        "form": form
+    }
+    # we want to return a form to the template, whether or not it's a POST
+    # request
+
+    if request.method == "POST":
+        form = CustomerFeedbackForm(request.POST)
+        context['form'] = form
+
+        if form.is_valid():
+            form.save(commit=True)
+
+            context["message"] = "Thank you for your feedback"
+        else:
+            # context['form'] = {}
+            pass
+
+    return render(request, template_name="ecommerce/contact-us.html", context=context)

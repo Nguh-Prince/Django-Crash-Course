@@ -69,3 +69,16 @@ class OrderProduct(models.Model):
     quantity = models.IntegerField()
 
     # validate quantity > 0
+
+class CustomerFeedback(models.Model):
+    time_created = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self) -> str:
+        return f"{self.name[:10]}: {self.message[:20]}"
+    
+    @property
+    def short_message(self) -> str:
+        return self.message[:20]

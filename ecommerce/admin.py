@@ -27,6 +27,10 @@ class ProductAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     inlines = [OrderProductInline]
 
+class CustomerFeedbackAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'short_message', 'time_created')
+
 admin.site.register(Collection)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Order, OrderAdmin)
+admin.site.register(CustomerFeedback, CustomerFeedbackAdmin)

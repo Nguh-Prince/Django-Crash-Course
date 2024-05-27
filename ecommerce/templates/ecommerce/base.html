@@ -6,7 +6,7 @@
 
     <title>Multifly Ganjan</title>
 
-    <link rel="canonical" href="index.html" />
+    <link rel="canonical" href="{% url 'ecommerce:index' %}" />
     <link
       rel="shortcut icon"
       href="{% static 'ecommerce/cdn/shop/files/fav_32x323b1f.png' %}"
@@ -1023,7 +1023,7 @@
               <div class="container container_big">
                 <div class="header_item_left">
                   <h1>
-                    <a class="header_logo" href="index.html">
+                    <a class="header_logo" href="{% url 'ecommerce:index' %}">
                       <img
                         src="{% static 'ecommerce/cdn/shop/files/Group_526_170x28_crop_center@2xff27.png' %}"
                         alt="Multifly Ganjan"
@@ -1077,81 +1077,32 @@
                             <div>
                               <ul class="level_3">
                                 <li class="level_3__item">
-                                  <a class="level_3__link" href="index.html"
+                                  <a class="level_3__link" href="{% url 'ecommerce:index' %}"
                                     >Home</a
-                                  >
-                                </li>
-
-                                <li class="level_3__item">
-                                  <a
-                                    class="level_3__link"
-                                    href="collections/all.html"
-                                    >Catalog</a
                                   >
                                 </li>
 
                                 <li class="level_3__item with_ul">
                                   <a
                                     class="level_3__link"
-                                    href="collections.html"
+                                    href="{% url 'ecommerce:collections' %}"
                                     >Collections<i
                                       class="level_3__trigger megamenu_trigger"
                                       data-submenu="submenu_1568649904694-3"
                                     ></i
                                   ></a>
-
-                                  <ul
-                                    class="level_3_2 droped_linklist"
-                                    id="submenu_1568649904694-3"
-                                  >
-                                    <li class="level_3_2_item">
-                                      <a
-                                        class="level_3_2_link"
-                                        href="collections/beauty.html"
-                                        >High thc</a
-                                      >
-                                    </li>
-
-                                    <li class="level_3_2_item">
-                                      <a
-                                        class="level_3_2_link"
-                                        href="collections/hybrid-strain.html"
-                                        >Hybrid strain</a
-                                      >
-                                    </li>
-
-                                    <li class="level_3_2_item">
-                                      <a
-                                        class="level_3_2_link"
-                                        href="collections/indica-strain.html"
-                                        >Indica strain</a
-                                      >
-                                    </li>
-
-                                    <li class="level_3_2_item">
-                                      <a
-                                        class="level_3_2_link"
-                                        href="collections/personal-care.html"
-                                        >Personal care</a
-                                      >
-                                    </li>
-
-                                    <li class="level_3_2_item">
-                                      <a
-                                        class="level_3_2_link"
-                                        href="collections/sale.html"
-                                        >Sale</a
-                                      >
-                                    </li>
-
-                                    <li class="level_3_2_item">
-                                      <a
-                                        class="level_3_2_link"
-                                        href="collections/sativa-strain.html"
-                                        >Sativa strain</a
-                                      >
-                                    </li>
+                                  {% if collections %}
+                                  <ul class="level_3_2 droped_linklist">
+                                    {% for collection in collections %}
+                                      <li class="level_3_2_item">
+                                
+                                        <a class="level_3_2_link" href="{% url 'ecommerce:collections' collection.id %}">{{ collection.name }}</a
+                                
+                                >
+                                      </li>
+                                    {% endfor %}
                                   </ul>
+                                {% endif %}
                                 </li>
 
                                 <li class="level_3__item">
@@ -1173,7 +1124,7 @@
                                 <li class="level_3__item">
                                   <a
                                     class="level_3__link"
-                                    href="pages/contact-us.html"
+                                    href="{% url 'ecommerce:contact' %}"
                                     >Contact us</a
                                   >
                                 </li>
@@ -1184,243 +1135,10 @@
                       </li>
 
                       <li
-                        class="level_1__item level_2__links"
+                        class="level_1__item level_2__small"
                         style="display: inline-block"
                       >
-                        <a class="level_1__link" href="collections/all.html"
-                          >Catalog
-                          <i
-                            class="level_1__trigger megamenu_trigger"
-                            data-submenu="menu_1568710279425"
-                          ></i>
-                        </a>
-
-                        <ul
-                          class="level_2"
-                          id="menu_1568710279425"
-                          style="display: none"
-                        >
-                          <li class="container item_3link-2ban">
-                            <div class="row">
-                              <div class="megamenu_col__item megamenu_linklist">
-                                <h3 class="visible">
-                                  Collections
-                                  <i
-                                    class="level_2__trigger megamenu_trigger"
-                                    data-submenu="menu_1568710279425-1"
-                                  ></i>
-                                </h3>
-
-                                <ul class="level_3" id="menu_1568710279425-1">
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/beauty.html"
-                                      >High thc</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/hybrid-strain.html"
-                                      >Hybrid strain</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/indica-strain.html"
-                                      >Indica strain</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/personal-care.html"
-                                      >Personal care</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/sale.html"
-                                      >Sale</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/sativa-strain.html"
-                                      >Sativa strain</a
-                                    >
-                                  </li>
-                                </ul>
-                              </div>
-
-                              <div class="megamenu_col__item megamenu_linklist">
-                                <h3 class="visible">
-                                  Main Menu
-                                  <i
-                                    class="level_2__trigger megamenu_trigger"
-                                    data-submenu="menu_1568710279425-2"
-                                  ></i>
-                                </h3>
-
-                                <ul class="level_3" id="menu_1568710279425-2">
-                                  <li class="level_3__item">
-                                    <a class="level_3__link" href="index.html"
-                                      >Home</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/all.html"
-                                      >Catalog</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections.html"
-                                      >Collections</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="blogs/blog.html"
-                                      >Blog</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/about-us.html"
-                                      >About Us</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/contact-us.html"
-                                      >Contact us</a
-                                    >
-                                  </li>
-                                </ul>
-                              </div>
-
-                              <div class="megamenu_col__item megamenu_linklist">
-                                <h3 class="visible">
-                                  Our company
-                                  <i
-                                    class="level_2__trigger megamenu_trigger"
-                                    data-submenu="menu_1568710279425-3"
-                                  ></i>
-                                </h3>
-
-                                <ul class="level_3" id="menu_1568710279425-3">
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/delivery-info.html"
-                                      >Delivery</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/privacy-policy.html"
-                                      >Legal Notice</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/about-us.html"
-                                      >About us</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/contact-us.html"
-                                      >Contact us</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/privacy-policy.html"
-                                      >Terms and conditions of use</a
-                                    >
-                                  </li>
-                                </ul>
-                              </div>
-
-                              <div
-                                class="megamenu_col__item megamenu_col__banner"
-                              >
-                                <a
-                                  class="megamenu_banner"
-                                  id="banner_catalog_1"
-                                  href="collections/personal-care.html"
-                                >
-                                  <img
-                                    src="{% static 'ecommerce/cdn/shop/files/collection_1_280x380_crop_center3f72.png' %}"
-                                    alt=""
-                                  />
-                                  <div class="caption_text">
-                                    <h4>2021</h4>
-
-                                    <h5>Edibles</h5>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div
-                                class="megamenu_col__item megamenu_col__banner"
-                              >
-                                <a
-                                  class="megamenu_banner"
-                                  id="banner_catalog_2"
-                                  href="collections/sale.html"
-                                >
-                                  <img
-                                    src="{% static 'ecommerce/cdn/shop/files/collection_2_280x380_crop_center52f2.png' %}"
-                                    alt=""
-                                  />
-                                  <div class="caption_text">
-                                    <h4>SALE</h4>
-
-                                    <h5>Get up to 20% off</h5>
-                                  </div>
-                                </a>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li
-                        class="level_1__item level_2__links"
-                        style="display: inline-block"
-                      >
-                        <a class="level_1__link" href="collections.html"
+                        <a class="level_1__link" href="{% url 'ecommerce:collections' %}"
                           >Collections
                           <i
                             class="level_1__trigger megamenu_trigger"
@@ -1428,171 +1146,33 @@
                           ></i>
                         </a>
 
-                        <ul
-                          class="level_2"
+                        {% if collections %}
+                        <ul 
+                          class="level_2" 
+                          style="display: none;" 
                           id="menu_1568710505955"
-                          style="display: none"
                         >
-                          <li class="container item_2link-2ban">
-                            <div class="row">
-                              <div class="megamenu_col__item megamenu_linklist">
-                                <h3>
-                                  Collections
-                                  <i
-                                    class="level_2__trigger megamenu_trigger"
-                                    data-submenu="menu_1568710505955-1"
-                                  ></i>
-                                </h3>
-
+                          <li class="item_link-linklist">
+                            <div>
                                 <ul class="level_3" id="menu_1568710505955-1">
+                                  {% for collection in collections %}
                                   <li class="level_3__item">
                                     <a
                                       class="level_3__link"
-                                      href="collections/beauty.html"
-                                      >High thc</a
+                                      href="{% url 'ecommerce:collections' collection.id %}"
+                                      >{{ collection.name }}</a
                                     >
                                   </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/hybrid-strain.html"
-                                      >Hybrid strain</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/indica-strain.html"
-                                      >Indica strain</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/personal-care.html"
-                                      >Personal care</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/sale.html"
-                                      >Sale</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/sativa-strain.html"
-                                      >Sativa strain</a
-                                    >
-                                  </li>
+                                  {% endfor %}
                                 </ul>
-                              </div>
-
-                              <div class="megamenu_col__item megamenu_linklist">
-                                <h3>
-                                  Main Menu
-                                  <i
-                                    class="level_2__trigger megamenu_trigger"
-                                    data-submenu="menu_1568710505955-2"
-                                  ></i>
-                                </h3>
-
-                                <ul class="level_3" id="menu_1568710505955-2">
-                                  <li class="level_3__item">
-                                    <a class="level_3__link" href="index.html"
-                                      >Home</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections/all.html"
-                                      >Catalog</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="collections.html"
-                                      >Collections</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="blogs/blog.html"
-                                      >Blog</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/about-us.html"
-                                      >About Us</a
-                                    >
-                                  </li>
-
-                                  <li class="level_3__item">
-                                    <a
-                                      class="level_3__link"
-                                      href="pages/contact-us.html"
-                                      >Contact us</a
-                                    >
-                                  </li>
-                                </ul>
-                              </div>
-
-                              <div
-                                class="megamenu_col__item megamenu_col__banner"
-                              >
-                                <a
-                                  class="megamenu_banner"
-                                  href="collections/hybrid-strain.html"
-                                >
-                                  <img
-                                    src="{% static 'ecommerce/cdn/shop/files/blog_2_380x240_crop_center4257.png' %}"
-                                    alt=""
-                                  />
-                                  <div class="caption_text">
-                                    <h4>Best sellers</h4>
-                                  </div>
-                                </a>
-                              </div>
-
-                              <div
-                                class="megamenu_col__item megamenu_col__banner"
-                              >
-                                <a
-                                  class="megamenu_banner"
-                                  href="collections/indica-strain.html"
-                                >
-                                  <img
-                                    src="{% static 'ecommerce/cdn/shop/files/blog_1_380x240_crop_centera176.png' %}"
-                                    alt=""
-                                  />
-                                  <div class="caption_text">
-                                    <h4>Pod systems</h4>
-                                  </div>
-                                </a>
-                              </div>
                             </div>
                           </li>
                         </ul>
+                        {% endif %}
                       </li>
 
                       <li class="level_1__item" style="display: inline-block">
-                        <a class="level_1__link" href="pages/contact-us.html"
+                        <a class="level_1__link" href="{% url 'ecommerce:contact' %}"
                           >Contact Us
                         </a>
                       </li>
@@ -1818,7 +1398,7 @@
                         </li>
 
                         <li>
-                          <a href="pages/contact-us.html">Contact us</a>
+                          <a href="{% url 'ecommerce:contact' %}">Contact us</a>
                         </li>
 
                         <li>
@@ -1869,7 +1449,7 @@
                   </li>
 
                   <li>
-                    <a href="index.html"
+                    <a href="{% url 'ecommerce:index' %}"
                       ><i class="fa fa-pinterest" aria-hidden="true"></i
                     ></a>
                   </li>
